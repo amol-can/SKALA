@@ -1,17 +1,14 @@
-<?php require 'include/config.php';?>
-<!-- <?php
-$connect=mysqli_connect("localhost","root","","skala");
-$query="SELECT * FROM dropout WHERE enr_date BETWEEN '2016-03-01' AND '2016-04-28' AND pred='dropout'  GROUP BY enr_date";
-$result= mysqli_query($connect,$query);
-?> -->
+
+<?php
+require 'include/config.php';
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-
-    
-
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -35,12 +32,6 @@ $result= mysqli_query($connect,$query);
 
     <script src="js/jquery.min.js"></script>
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script type="text/javascript">google.charts.load('current', {'packages':['line']});</script>
 
 </head>
 
@@ -86,9 +77,6 @@ $result= mysqli_query($connect,$query);
                                          <li><a href="index.php">Dashboard</a>
                                             </li>
                                             <li><a href="index2.php">Dropout Analysis </a>
-                                                <ul class="nav child_menu" style="display: none">
-                                                <li><a href="index2_1.php">Dropout Prediction</a></li>
-                                                </ul>
                                             </li>
                                             <li><a href="index3.php">Course Prediction</a>
                                             </li>
@@ -257,24 +245,14 @@ $result= mysqli_query($connect,$query);
                 <div class="">
 
                     <div class="row top_tiles">
-                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" >
-                            <div class="tile-stats" >
-                                <div class="icon"><i class="fa fa-sort-amount-desc"></i>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div class="icon"><i class="fa fa-caret-square-o-right"></i>
                                 </div>
-                                <div class="count" style="color: #ff6666" >
+                                <div class="count">179</div>
 
-                                <?php
-                               
-                                $query = "SELECT (( SUM(Drop_Count) / COUNT(Drop_Count))* 100) as dper from dropout_dashboard";
-                                $result = $conn->query($query);
-                                $row = mysqli_fetch_assoc($result);
-                                echo $row['dper'];;
-                                ?>
-
-                                </div>
-
-                                <h3>Dropout</h3>
-                                <p>Overall Percentage.</p>
+                                <h3>New Sign ups</h3>
+                                <p>Lorem ipsum psdea itgum rixt.</p>
                             </div>
                         </div>
                         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -310,66 +288,26 @@ $result= mysqli_query($connect,$query);
                     </div>
 
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12">
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Dropout Analysis<small></small></h2>
                                     <div class="filter">
                                         <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                            <span id="time"></span> <b class="caret"></b>
-                                            <script type="text/javascript">var today = new Date();
-                                            document.getElementById('time').innerHTML=today;</script>
+                                            <span>December 30, 2016 - January 28, 2016</span> <b class="caret"></b>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <!-- Dropout Line Chart -->
-                                    <script type="text/javascript">
-                                     google.charts.load('current', {'packages':['line']});
-                                     /*google.charts.setOnLoadCallback(drawLine);*/
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
                                       
-                                   </script>
 
-                                    <div class="col-md-6 col-sm-6 col-xs-6">                                  
-                                      <?php                                        
-                                        $query = "SELECT DISTINCT Institute from dropout_dashboard where Institute IS NOT NULL";
-                                        $result = $conn->query($query);
-                                       ?>         
+                                      <?php include("pre_dropbatch.php"); ?>
+                                     
 
-                                       <select id="dropdown" class="dropdown-content">
-                                                <option>All Institutes</option>
-                                                <?php
-                                                    while($row=mysqli_fetch_array( $result)) {
-                                                      echo "<option value=".$row['Institute'].">";
-                                                      echo $row['Institute'];
-                                                       echo "</option>";                                                    
-                                                      }                                                  
-
-                                                ?>
-                                        </select>
-                                          <script src="dropout_charts/dropline.js"></script>
-                                        
-                                        <div id="line_top_x" style="width: 100%;height:350px"></div>                                        
-
-                                    </div>                                    
-                                    <!-- /Dropout Line Chart-->
-
-                                    <!-- Column Dropout Chart -->
-                                     <div class="col-md-6 col-sm-6 col-xs-6" >
-
-
-                                        <script type="text/javascript">
-                                           google.charts.load('current', {'packages':['bar']});
-                                           google.charts.setOnLoadCallback(drawChart);  
-                                        </script>
-
-                                        <script src="dropbatch.js"></script>
-                                        <div id="columnchart_material" style="width: 100%;height:350px"></div>
-
-                                     </div>
-                                     <!-- /Column Dropout Chart -->
+                                    </div>
 
 
                                 </div>
@@ -377,75 +315,10 @@ $result= mysqli_query($connect,$query);
                         </div>
                     </div>
 
-                    
 
-                    <!-- Course Wise Dropout -->
 
                     <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Dropout Analysis By Center <small>Percentage Wise</small></h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-
-
-                                
-                                <div>
-                                    <?php
-                                        
-                                        $query = "SELECT DISTINCT Institute from dropout_dashboard where Institute IS NOT NULL";
-                                        $result = $conn->query($query);
-
-                                    ?>
-                                    <script type="text/javascript">google.charts.load('current', {packages: ['corechart']});</script>
-
-                                    <select id="dropdown2">
-                                        <option>All Institutes</option>
-
-                                        <?php
-
-                                        while($row=mysqli_fetch_array( $result)) {
-                                          echo "<option value=".$row['Institute'].">";
-                                          echo $row['Institute'];
-                                           echo "</option>";
-                                      
-                                          }
-
-                                         ?>
-                                     </select>
-
-                                    <script src="dropout_charts/single2.js"></script>
-                                    <div id="container" style="width: 100%; height: 350px"></div>
-                                </div>
-                                                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Course Wise Dropout -->
-
-
-
-
-
-                    <!-- Dropout Table-->
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12">
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Dropout Summary <small>Activity shares</small></h2>
@@ -467,19 +340,28 @@ $result= mysqli_query($connect,$query);
                                     <div class="clearfix"></div>
                                 </div>
 
+                                <?php
+                                $query="SELECT User_Id, StudentName, Course_Name, Gender, Age, Highest_Qualification, DistanceKM from drop_pre where Pred='dropout' ";
+                                $result= mysqli_query($conn,$query);
+                                ?>
+
                                  <div class="col-md-12 col-sm-12 col-xs-12" id="coursepre " style="width: 100%;height:300px;overflow:auto">
 
                                         <table class="table table-bordered">
                                             <tr>
-                                                <th width="20%">Student User ID</th>
-                                                <th width="40%">Batch Name</th>
-                                                <th width="40%">Course Name</th>
+                                                <th width="10%">Student ID</th>
+                                                <th width="20%">Student Name</th>
+                                                <th width="20%">Course Name</th>
+                                                <th width="10%">Gender Name</th>
+                                                <th width="10%">Age</th>
+                                                <th width="20%">Qualification</th>
+                                                <th width="10%">Travel Distance</th>
                                             </tr>  
                                             <?php
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<tr><td>".$row["user_id"]."</td><td>".$row["batch_name"]."</td><td> ".$row["course_name"]."</td></tr>";
+                                            echo "<tr><td>".$row["User_Id"]."</td><td>".$row["StudentName"]."</td><td> ".$row["Course_Name"]."</td><td>".$row["Gender"]."</td><td>".$row["Age"]."</td><td>".$row["Highest_Qualification"]."</td><td>".$row["DistanceKM"]."</td></tr>";
                                             }
-                                            $connect->close();
+                                            $conn->close();
                                             ?>                 
                                         </table>
                                         
@@ -492,7 +374,6 @@ $result= mysqli_query($connect,$query);
                         </div>
 
                     </div>
-                    <!-- /Dropout Table-->
 
 
 
@@ -553,8 +434,11 @@ $result= mysqli_query($connect,$query);
     <script type="text/javascript" src="js/flot/curvedLines.js"></script>
     <script type="text/javascript" src="js/flot/jquery.flot.resize.js"></script>
 
-    <!-- Dropdout Table Script-->
-     
+    <!-- flot -->
+  
+      <!-- /datepicker -->
+
+      <!-- Dropdout Table Script-->
         <script type="text/javascript" src="js/js/jquery.min.js"></script>
         <script type="text/javascript" src="js/js/Chart.min.js"></script>
         <script type="text/javascript" src="js/js/drop_line.js"></script>
@@ -588,5 +472,5 @@ $result= mysqli_query($connect,$query);
     });
 </script>
 
-
-  
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

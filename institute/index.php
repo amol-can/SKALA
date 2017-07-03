@@ -328,8 +328,9 @@
                                 <div class="col-md-9 col-sm-9 col-xs-12">
                                     <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
                                     <div style="width: 100%;">
+                                    
                                         <?php include("chart_sample.php");?>  <!-- chart -->
-                                        <!--<div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>-->
+                                       
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">

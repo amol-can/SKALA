@@ -1,6 +1,6 @@
 <?php  
 
-$servername = "localhost";
+		$servername = "localhost";
 		//username to connect to the db
 		//the default value is root
 		$username = "root";
