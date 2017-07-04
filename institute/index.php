@@ -388,8 +388,8 @@
                     <div class="row">
 
 
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                            <div class="x_panel tile fixed_height_320">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel tile fixed_height_350 ">
                                 <div class="x_title">
                                     <h2>Placement Factor</h2>
                                     <ul class="nav navbar-right panel_toolbox">
@@ -411,7 +411,8 @@
                                 </div>
                                 <div class="x_content">                             
                                     
-                                    <?php include("google_pie.php");?>                             
+                                    
+                                    <?php include("place_convert.php");?>                       
                                                                    
                                    
                                 </div>
@@ -421,7 +422,7 @@
                         
 
 
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+<!--                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <div class="x_panel tile fixed_height_320">
                                 <div class="x_title">
                                     <h2>Other Analysis</h2>
@@ -442,9 +443,9 @@
                                     </ul>
                                     <div class="clearfix"></div>
                                 </div>
-                           
+                           <?php /*include("google_pie.php")*/;?>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
