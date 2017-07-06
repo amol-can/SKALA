@@ -1,7 +1,9 @@
+
+
 function drawChart() {
    // Define the chart to be drawn.
    var jsonData = $.ajax({
-            url: "http://localhost/skala/institute/co_prediction/co_pre_data.php",
+            url: "http://localhost/skala/institute/co_prediction/scrap_pre_data.php",
             dataType: "json",
             async: false
             }).responseText;
@@ -47,16 +49,16 @@ function drawChart() {
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container1'));
+   var chart = new google.charts.Bar(document.getElementById('container2'));
    
    chart.draw(data, options);
 }
 
 google.charts.setOnLoadCallback(drawChart);
 
- $("#dropdown3").change(function() {
- var value1= $('option:selected', this).text();
- var url="http://localhost/skala/institute/co_prediction/co_pre_data.php?center_name="+value1;
+ $("#dropdown4").change(function() {
+ var value2= $('option:selected', this).text();
+ var url="http://localhost/skala/institute/co_prediction/scrap_pre_data.php?location="+value2;
 var res=encodeURI(url);
 console.log(res);
     var jsonData = $.ajax({
@@ -106,6 +108,6 @@ console.log(res);
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container1'));
+   var chart = new google.charts.Bar(document.getElementById('container2'));
    chart.draw(data, options);
 })

@@ -1,9 +1,5 @@
 <?php require 'include/config.php';?>
-<!-- <?php
-$connect=mysqli_connect("localhost","root","","skala");
-$query="SELECT * FROM dropout WHERE enr_date BETWEEN '2016-03-01' AND '2016-04-28' AND pred='dropout'  GROUP BY enr_date";
-$result= mysqli_query($connect,$query);
-?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -479,7 +475,7 @@ $result= mysqli_query($connect,$query);
                                             while($row = $result->fetch_assoc()) {
                                             echo "<tr><td>".$row["user_id"]."</td><td>".$row["batch_name"]."</td><td> ".$row["course_name"]."</td></tr>";
                                             }
-                                            $connect->close();
+                                            $conn->close();
                                             ?>                 
                                         </table>
                                         
