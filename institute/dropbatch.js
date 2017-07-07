@@ -73,9 +73,9 @@ console.log(data);
       var arr2 = [];
 
 
-      arr.push("batch");
-      arr.push("total");
-      arr.push("dropout");
+      arr.push("Batch");
+      arr.push("Total");
+      arr.push("Dropout");
        arr2.push(arr);
       
        arr=[];

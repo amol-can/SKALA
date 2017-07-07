@@ -77,6 +77,9 @@ require 'include/config.php';
                                          <li><a href="index.php">Dashboard</a>
                                             </li>
                                             <li><a href="index2.php">Dropout Analysis </a>
+                                            <ul class="nav child_menu" style="display: none">
+                                                <li><a href="index2_1.php">Dropout Prediction</a></li>
+                                                </ul>
                                             </li>
                                             <li><a href="index3.php">Course Prediction</a>
                                             </li>
