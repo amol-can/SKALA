@@ -17,6 +17,13 @@
     <title>Welcome Institute! | </title>
 
     <!-- Bootstrap core CSS -->
+    <style>
+    #map {
+       height: 350px;
+     }
+
+    
+    </style>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -154,43 +161,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="menu_section">
-                            <h3>Live On</h3>
-                            <ul class="nav side-menu">
-                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="e_commerce.html">E-commerce</a>
-                                        </li>
-                                        <li><a href="projects.html">Projects</a>
-                                        </li>
-                                        <li><a href="project_detail.html">Project Detail</a>
-                                        </li>
-                                        <li><a href="contacts.html">Contacts</a>
-                                        </li>
-                                        <li><a href="profile.html">Profile</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="page_404.html">404 Error</a>
-                                        </li>
-                                        <li><a href="page_500.html">500 Error</a>
-                                        </li>
-                                        <li><a href="plain_page.html">Plain Page</a>
-                                        </li>
-                                        <li><a href="login.html">Login Page</a>
-                                        </li>
-                                        <li><a href="pricing_tables.html">Pricing Tables</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
-                                </li>
-                            </ul>
-                        </div>
-
+                        
                     </div>
                     <!-- /sidebar menu -->
 
@@ -309,7 +280,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Distance Analysis<small></small></h2>
+                                    <h2>Institute Distance Analysis<small></small></h2>
                                     <div class="filter">
                                         <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -351,7 +322,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2> Distance Analysis <small></small></h2>
+                                    <h2> Institute Avg. Travel Distance <small></small></h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -383,6 +354,40 @@
 
 
 
+                                        <!-- Map 4 -->
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Heat Map of Students <small></small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>                              
+                                
+                                   
+                                   
+                                   <iframe style="width: 100%; height: 350px" src="http://localhost/skala/institute/hitmap.php"></iframe>
+
+                                                                
+                            </div>
+                        </div>
+                    </div>
+
 
 
 
@@ -394,7 +399,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Heat Map <small></small></h2>
+                                    <h2>Student Travel Distance <small></small></h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -418,9 +423,7 @@
                                 <div>
                                    
                                    
-                                                      <div style="height: 500px;">
-                                                          <iframe width="100%" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col9%2C+col10%2C+col11+from+1QcOScnFlVkwIlk2SdHsQ8lwwrsmjSO6Nd7Fs8KBY+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=23.82633412612794&amp;lng=83.40297048859861&amp;t=1&amp;z=5&amp;l=col9&amp;y=3&amp;tmplt=4&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=1&amp;hmr=10&amp;hmw=11&amp;hml=TWO_COL_LAT_LNG"></iframe>
-                                                      </div>
+                                                     <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col9+from+12f2hn7XkvRytEQmzafITvQZMUhOeUNAr8gC6Xa7r&amp;viz=MAP&amp;h=false&amp;lat=18.451753656316285&amp;lng=81.34049726250008&amp;t=1&amp;z=6&amp;l=col9&amp;y=2&amp;tmplt=2&amp;hml=TWO_COL_LAT_LNG"></iframe>
                                                   
                                          
 
@@ -438,8 +441,13 @@
 
 
 
+
+
+
+
         
                 </div>
+
 
                 <!-- footer content -->
                 <footer>
@@ -581,14 +589,18 @@
                                           }
                                         }
                            </script>
-                            <script async defer
-                                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPmQncFFGdKhM-ISVzaNlfxaV2_JXMsdg&callback=initMap">
-                            </script>
+                           
 
 
   
 </body>
-
+                            <script async defer
+                                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPmQncFFGdKhM-ISVzaNlfxaV2_JXMsdg&callback=initMap">
+                            </script>
+      <!--                       <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPmQncFFGdKhM-ISVzaNlfxaV2_JXMsdg&libraries=visualization&callback=initMap1">
+    </script>
+ -->
 </html>
 
  

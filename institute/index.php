@@ -145,42 +145,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu" style="display: none">
-                                            <li><a href="e_commerce.html">E-commerce</a>
-                                            </li>
-                                            <li><a href="projects.html">Projects</a>
-                                            </li>
-                                            <li><a href="project_detail.html">Project Detail</a>
-                                            </li>
-                                            <li><a href="contacts.html">Contacts</a>
-                                            </li>
-                                            <li><a href="profile.html">Profile</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu" style="display: none">
-                                            <li><a href="page_404.html">404 Error</a>
-                                            </li>
-                                            <li><a href="page_500.html">500 Error</a>
-                                            </li>
-                                            <li><a href="plain_page.html">Plain Page</a>
-                                            </li>
-                                            <li><a href="login.html">Login Page</a>
-                                            </li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a>
-                                            </li>
-
-                                        </ul>
-                                    <!--</li>
-                                    <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
-                                    </li>-->
-                                </ul>
-                            </div>
+                            
 
                         </div>
                         <!-- /sidebar menu -->
@@ -230,7 +195,7 @@
                                 echo $row['total'];;
                                 ?>
                                 </div>
-                                <span class="count_bottom"><i class="green">4% </i> From last Month</span>
+                                <span class="count_bottom"><i class="green">4% </i> From last Year</span>
                             </div>
                         </div>
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -238,7 +203,7 @@
                             <div class="right">
                                 <span class="count_top"><i class="fa fa-clock-o"></i> Average Batches</span>
                                 <div class="count">10</div>
-                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>1% </i> From last Month</span>
+                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>1% </i> From last Year</span>
                             </div>
                         </div>
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -254,7 +219,7 @@
                                 echo $row['male'];
                                 ?>
                                 </div>
-                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Month</span>
+                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Year</span>
                             </div>
                         </div>
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -270,7 +235,7 @@
                                 echo $row['female'];
                                 ?>
                                 </div>
-                                <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Month</span>
+                                <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Year</span>
                             </div>
                         </div>
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -286,7 +251,7 @@
                                 echo $row['placed'];
                                 ?>
                                 </div>
-                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>10% </i> From last Month</span>
+                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>10% </i> From last Year</span>
                             </div>
                         </div>
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
@@ -302,7 +267,7 @@
                                 echo $row['placed'];
                                 ?>
                                 </div>
-                                <span class="count_bottom"><i class="red"><i class="fa fa-sort-asc"></i>10% </i> From last Month</span>
+                                <span class="count_bottom"><i class="red"><i class="fa fa-sort-asc"></i>10% </i> From last Year</span>
                             </div>
                         </div>
 
@@ -322,7 +287,7 @@
                                         <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
                                             <span id="time"></span> <b class="caret"></b>
-                                            <script type="text/javascript">var today = new Date();
+                                            <script type="text/javascript">var today = new Date().toDateString();
                                             document.getElementById('time').innerHTML=today;</script>
                                         </div>
                                     </div>
