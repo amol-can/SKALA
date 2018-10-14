@@ -1,16 +1,6 @@
 <?php
-		//address of the server where db is installed
-		$servername = "localhost";
-		//username to connect to the db
-		//the default value is root
-		$username = "root";
-		//password to connect to the db
-		//this is the value you would have specified during installation of WAMP stack
-		$password = "";
-		//name of the db under which the table is created
-		$dbName = "skala";
-		//establishing the connection to the db.
-		$conn = new mysqli($servername, $username, $password, $dbName);
+		include '../include/config.php';
+		header('Access-Control-Allow-Origin: *');
 		//checking if there were any error during the last connection attempt
 		if ($conn->connect_error) {
 		  die("Connection failed: " . $conn->connect_error);
@@ -18,14 +8,14 @@
 		//the SQL query to be executed
 		if (empty($_GET['center_name']))
 		{
-		    $query = "SELECT AVG(final_score) AS final_score, course_name FROM co_prediction GROUP BY course_name ORDER BY final_score DESC";
+		    $query = "SELECT AVG(score) AS final_score, course_name FROM co_prediction GROUP BY course_name ORDER BY final_score DESC";
 		    $result = $conn->query($query);
 		}
 		else
 		{
 		
 		$iname3=$_GET['center_name'];
-		$query = "SELECT AVG(final_score) AS final_score, course_name FROM co_prediction where center_name='$iname3' GROUP BY course_name ORDER BY final_score DESC";
+		$query = "SELECT AVG(score) AS final_score, course_name FROM co_prediction where center_name='$iname3' GROUP BY course_name ORDER BY final_score DESC";
 		$result = $conn->query($query);
 		
 		}

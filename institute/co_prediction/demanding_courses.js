@@ -1,11 +1,11 @@
-function drawChart() {
+function drawChart1() {
    // Define the chart to be drawn.
    var jsonData = $.ajax({
-            url: "http://www.skala.in/institute/co_prediction/co_pre_data.php",
+            url: "http://localhost/skala/institute/co_prediction/demanding_courses_data.php",
             dataType: "json",
             async: false
             }).responseText;
-
+   console.log(jsonData);
    var parsed = JSON.parse(jsonData);
    
       var arr = [];
@@ -14,24 +14,24 @@ function drawChart() {
       arr.push("label");      
       arr.push("value");
       
-       
       
        arr=[];
       for(var x of parsed){
        /*console.log(x)*/
        arr.push(x.label);      
        arr.push(Number(x.value));
-    
+       /*console.log(x.value);*/
        arr2.push(arr);
        arr=[];
       }
-      console.log(arr2);
+      /*console.log(arr2);*/
    var data = google.visualization.arrayToDataTable(arr2,true);
 /*console.log(arr2);*/
+      
    var options = {
       /*title: 'Dropout Analysis',*/
       isStacked:'percent',
-      colors: ['#3399ff'],
+      colors: ['#17BFA5'],
 
       legend: { position: 'none' },
           /*chart: { title: 'Chess opening moves',
@@ -47,16 +47,16 @@ function drawChart() {
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container1'));
+   var chart = new google.charts.Bar(document.getElementById('container2'));
    
    chart.draw(data, options);
 }
 
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart1);
 
  $("#dropdown3").change(function() {
  var value1= $('option:selected', this).text();
- var url="http://www.skala.in/institute/co_prediction/co_pre_data.php?center_name="+value1;
+ var url="http://localhost/skala/institute/co_prediction/demanding_courses_data.php?center_name="+value1;
 var res=encodeURI(url);
 console.log(res);
     var jsonData = $.ajax({
@@ -88,7 +88,7 @@ console.log(res);
    var options = {
       /*title: 'Dropout Analysis',*/
       isStacked: 'percent',
-      colors: ['#3399ff'],
+      colors: ['#17BFA5'],
 
       legend: { position: 'none' },
           /*chart: { title: 'Chess opening moves',
@@ -106,6 +106,6 @@ console.log(res);
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container1'));
+   var chart = new google.charts.Bar(document.getElementById('container2'));
    chart.draw(data, options);
 })

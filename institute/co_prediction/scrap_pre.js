@@ -1,6 +1,6 @@
 
 
-function drawChart() {
+function drawChart3() {
    // Define the chart to be drawn.
    var jsonData = $.ajax({
             url: "http://localhost/skala/institute/co_prediction/scrap_pre_data.php",
@@ -33,7 +33,7 @@ function drawChart() {
    var options = {
       /*title: 'Dropout Analysis',*/
       isStacked:'percent',
-      colors: ['#3399ff'],
+      colors: ['#E114F1'],
 
       legend: { position: 'none' },
           /*chart: { title: 'Chess opening moves',
@@ -41,7 +41,7 @@ function drawChart() {
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
-              0: { side: 'top', label: 'Percentage'} // Top x-axis.
+              0: { side: 'top', label: 'Job Openings'} // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }
@@ -49,16 +49,16 @@ function drawChart() {
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container2'));
+   var chart = new google.charts.Bar(document.getElementById('container3'));
    
    chart.draw(data, options);
 }
 
-google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart3);
 
  $("#dropdown4").change(function() {
- var value2= $('option:selected', this).text();
- var url="http://localhost/skala/institute/co_prediction/scrap_pre_data.php?location="+value2;
+  var value2= $('option:selected', this).text();
+ var url="http://localhost/skala/institute/co_prediction/scrap_pre_data.php?Domain="+value2;
 var res=encodeURI(url);
 console.log(res);
     var jsonData = $.ajax({
@@ -90,7 +90,7 @@ console.log(res);
    var options = {
       /*title: 'Dropout Analysis',*/
       isStacked: 'percent',
-      colors: ['#3399ff'],
+      colors: ['#E114F1'],
 
       legend: { position: 'none' },
           /*chart: { title: 'Chess opening moves',
@@ -98,7 +98,7 @@ console.log(res);
           bars: 'horizontal', // Required for Material Bar Charts.
           axes: {
             x: {
-              0: { side: 'top', label: 'Percentage'} // Top x-axis.
+              0: { side: 'top', label: 'Job Openings'} // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }
@@ -108,6 +108,6 @@ console.log(res);
    };  
 
    // Instantiate and draw the chart.
-   var chart = new google.charts.Bar(document.getElementById('container2'));
+   var chart = new google.charts.Bar(document.getElementById('container3'));
    chart.draw(data, options);
-})
+ })
